@@ -19,5 +19,10 @@ registerUser(newUser:User):Observable<User>
 console.log("reg serv")
 return this.http.post(this.url+'register',newUser) as Observable<any>
 }
+loginUser(newUser:User):Observable<User>
+{
+console.log("login serv")
+return this.http.post(this.url+'login',newUser) as Observable<any>
+}
 
 }

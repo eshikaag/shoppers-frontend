@@ -1,0 +1,30 @@
+
+<div class="container col-md-5 row-md-6">
+    <div class="card mt-3">
+        <div class="card-title">
+    <h1 class="text-center text-dark">Registration Form</h1>
+</div>
+<div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+            <label>Email</label><span class="text-danger">*</span> <input type="text" class="form-control" formControlName="email">
+            <p *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.errors.required && loginForm.controls.email.touched" class="alert alert-danger">Field required</p>
+            <p *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.errors?.pattern && loginForm.controls.email.touched" class="alert alert-danger">Email should be in format abc@gmail.com</p>
+
+          </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password">
+        <p *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched && loginForm.controls.password.errors.required" class="alert alert-danger">This field is required!</p>
+        <p *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.errors?.pattern && loginForm.controls.password.touched" class="alert alert-danger">Password should have a special char,char,digit</p>
+    
+    </div>
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="loginForm.invalid" >login</button>
+</form>
+</div>
+<div class="card-footer">
+    <p class="text-success" *ngIf="successMsg!=null">{{successMsg}}</p>
+    <p class="text-danger" *ngIf="errMsg!=null">{{errMsg}}</p>
+
+</div>
+</div></div>
