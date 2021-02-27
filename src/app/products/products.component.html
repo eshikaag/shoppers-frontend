@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="row">
+        <div class="col-md-4 mb-2 " *ngFor="let product of products" >
+            <div class="card-deck">
+                <img class="card-img-top embed-responsive-item" src="../../assets/{{product.img}}">
+                <div class="card-body  flex-fill">
+                    <span>{{product.pName}}</span>
+                    <span>&nbsp;&nbsp;{{product.price|currency:'INR'}}</span>
+                   
+                    <span class="fa fa-star checked" style="float:right ;">{{product.pRating|number:'1.1'}}</span>
+                </div>
+                
+                </div>
+                
+
+</div>
+
+</div>

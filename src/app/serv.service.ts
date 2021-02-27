@@ -25,4 +25,10 @@ console.log("login serv")
 return this.http.post(this.url+'login',newUser) as Observable<any>
 }
 
+getSpecificProd(choosenCategory):Observable<any>
+{
+  console.log("categ is",choosenCategory)
+  return  this.http.get(this.url+'categoryproducts/'+choosenCategory)
+}
+
 }

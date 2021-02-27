@@ -12,20 +12,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">LOGIN</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Register</a></li>
-              <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+       
+       
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,17 +31,29 @@
 
 
 
-  <nav class="nav nav-pills nav-justified">
-    <a class="nav-link active" aria-current="page" href="#">CLOTHES</a>
-    <a class="nav-link" href="#">SHOES</a>
+  <nav class="nav nav-pills nav-justified" *ngFor="let tab of categories">
+    <a role="button" (click)="viewProdByCategory(tab)" >{{tab}}</a>
+    <!-- <a class="nav-link" href="#">SHOES</a>
     <a class="nav-link" href="#">FURNITURE</a>
-   
+    -->
   </nav>
 
-  <ngb-carousel *ngIf="images" style="height: 400px;">
+
+<div *ngIf="specificProdShow">
+  <app-products [products]="products" [choosencateg]="categSelected"></app-products>
+
+</div>
+
+
+
+
+
+
+
+  <ngb-carousel *ngIf="slideShow==true" style="height: 400px;">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img [src]="images[0]" alt="Random first slide">
+        <img [src]="images[0]" alt="Random first slide" (click)="viewProdByCategory('Clothes')">
       </div>
       <div class="carousel-caption">
         <h3>CLOTHES</h3>
@@ -62,7 +62,7 @@
     </ng-template>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img [src]="images[1]" alt="Random second slide">
+        <img [src]="images[1]" alt="Random second slide" (click)="viewProdByCategory('Shoes')">
       </div>
       <div class="carousel-caption">
         <h3>SHOES</h3>
@@ -71,7 +71,7 @@
     </ng-template>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img [src]="images[2]" alt="Random third slide">
+        <img [src]="images[2]" alt="Random third slide" (click)="viewProdByCategory('Furniture')">
       </div>
       <div class="carousel-caption">
         <h3>FURNITURE</h3>
@@ -79,3 +79,8 @@
       </div>
     </ng-template>
   </ngb-carousel>
+
+
+
+<router-outlet></router-outlet>
+

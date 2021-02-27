@@ -1,0 +1,41 @@
+
+
+
+.checked {
+    color: orange;
+  }
+  .card-body
+  {
+      background-color: grey;
+  }
+/* img
+{
+    width: 250px;
+    height: 250px;
+} */
+img:hover{
+    height: 550px;
+    width: 550px;
+}
+/* .card-body
+{
+    width: 250px;
+    height: 50px; 
+} */
+*
+
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+.card-body
+{
+    margin-left: 1 px;
+    border: 1px solid black;
+}
+.card-img-top
+{
+    margin-left: 1 px;
+    border: 1px solid black;
+}
