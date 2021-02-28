@@ -30,5 +30,10 @@ getSpecificProd(choosenCategory):Observable<any>
   console.log("categ is",choosenCategory)
   return  this.http.get(this.url+'categoryproducts/'+choosenCategory)
 }
-
+addItem(prod,email):Observable<any>
+{
+  console.log("in prod det serv")
+  console.log(this.url+'addItem/'+email)
+  return this.http.post(this.url+'addItem/'+email,prod)
+}
 }

@@ -1,0 +1,32 @@
+<div class="row"  *ngFor="let p of prodDet">
+    <div class=" offset-1 col-md-3" >
+        <img src="../../assets/{{p.img}}" style="width: 500px; height: 500px;">
+    </div>
+    <div class="offset-3 col-md-4 offset-2" style="height: 100px;">
+<div class="card">
+    <div class="card-title">
+        <h1 class="text-center">{{p.pName}}</h1>
+    </div>
+    <div class="card-body">
+        <h2>Description</h2>
+        <p>{{p.pDescrip}}</p>
+        <h2>Price</h2>
+        <p>{{p.price}}</p>
+        <h2>Color</h2>
+        <p>{{p.color}}</p>
+    </div>
+
+   <div class="card-footer">
+       <h2>Other Info</h2>
+       <p>Quntity Available: {{p.pQuantityAvailable}}</p>
+       <p>Discount: {{p.pDiscount|percent}}</p>
+       <p>Shpping Charges: {{p.pShippingCharges}}</p>
+   </div>
+
+
+
+</div>
+
+<button class="btn btn-primary btn-block" (click)="addItem(p)">Add to Cart</button>
+    </div>
+</div>

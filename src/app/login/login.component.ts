@@ -27,8 +27,11 @@ export class LoginComponent implements OnInit {
       data=>
       {
         this.successMsg=data.message
+        console.log("email from form",this.loginForm.value.email)
+        sessionStorage.setItem('email',this.loginForm.value.email)
         alert(this.successMsg)
-        this.router.navigate(["/login"])
+        console.log(sessionStorage.getItem('email'))
+        this.router.navigate(["/dashboard"])
       },
       err=>
       {
