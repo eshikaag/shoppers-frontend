@@ -29,7 +29,7 @@ addItem(prod)
       {
         console.log(email)
         console.log(data.message)
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/cart'])
       })
   }
   else

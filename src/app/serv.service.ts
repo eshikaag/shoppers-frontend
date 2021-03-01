@@ -36,4 +36,20 @@ addItem(prod,email):Observable<any>
   console.log(this.url+'addItem/'+email)
   return this.http.post(this.url+'addItem/'+email,prod)
 }
+getAllProd(email):Observable<any>
+{
+  return this.http.get<any>(this.url+"getAllProducts/"+email)
+}
+
+updateProdQuantity(pid,email,quantity):Observable<any>
+{
+  console.log("upd",pid)
+  return this.http.put(this.url+"updateQuantity",{pid,email,quantity}) as Observable<any>//giving all this as body
+}
+
+removeProduct(pid,email):Observable<any>
+{
+  return this.http.delete(this.url+'removeProduct/'+email+"/"+pid) as Observable<any>
+}
+
 }

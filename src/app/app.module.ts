@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CommonService } from './common.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     LoginComponent,
     DashboardComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +32,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HttpClientModule,
     FormsModule,
     NgbModule
+  
   ],
-  providers: [ServService],
+  providers: [ServService,CommonService],
   bootstrap: [AppComponent]
-})
+}) 
 export class AppModule { }

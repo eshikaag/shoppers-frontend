@@ -1,0 +1,49 @@
+
+<h2>YOU HAVE {{userProd.length}} PRODUCTS IN YOUR CART!!</h2>
+<div class="row">
+<div class="col-md-4">
+   
+
+<table class="table" >
+
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Prod left in stock</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let p of userProd">
+        <td>{{p.pName}}</td>
+        <td>
+<form>
+    <input #quant type="number" (change)="updateQuantity(p.pid,quant.value)" value="{{p.userCustomQuantity}}">
+</form>
+
+        </td>
+        <td>{{p.price|currency:'INR'}}</td>
+        <td>{{p.pQuantityAvailable}}</td>
+        <td><button (click)="removeProd(p.pid)">Delete</button></td>
+      </tr>
+</table>
+
+
+</div>
+<div class="col-md-4 offset-2">
+    <div class="card">
+<div class="card-head">
+    <h1 class="text-center">Cart Details</h1>
+</div>
+<div class="card-body">
+    <p>Cart Total: {{total|currency:'INR'}}</p>
+    <p>Toatal after Discount: {{cartTotal|currency:'INR'}}</p>
+    <p>Shipping Price: {{150|currency:'INR'}}</p>
+
+</div>
+<div class="card-footer">
+    <p>Total payable:{{  amountPayable|currency:'INR'}}</p>
+</div>
+    </div>
+<div class="btn btn-primary btn-block">Checkout</div>
+</div>
+</div>
