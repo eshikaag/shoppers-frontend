@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   cartTotal:number=0//imp to initialize
   amountPayable:number
   total:number=0
+  errMsg:string=''
   newData()
   {
     this.common.changeData(this.userProd.length)
@@ -108,4 +109,22 @@ removeProd(pid)
     }
   )
 }
+checkout()
+{
+  console.log("inside checkout")
+  this.service.checkout(this.email,this.userProd).subscribe(data=>
+    {
+      console.log("checkout orders",data)
+this.router.navigate(['/orders'])
+    },
+    (error)=>
+    {
+      this.errMsg=error.error.message
+    }
+    )
+ 
+}
+
+
+
 }

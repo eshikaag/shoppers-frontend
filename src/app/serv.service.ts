@@ -52,4 +52,13 @@ removeProduct(pid,email):Observable<any>
   return this.http.delete(this.url+'removeProduct/'+email+"/"+pid) as Observable<any>
 }
 
+checkout(email,prod):Observable<any>
+{
+  return this.http.post(this.url+'updateOrder/'+email,prod) as Observable<any>
+}
+
+getOrder(email):Observable<any>
+{
+  return this.http.get(this.url+"getOrders/"+email)
+}
 }

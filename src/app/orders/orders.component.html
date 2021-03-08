@@ -1,0 +1,26 @@
+<h1>HELLO!! &nbsp;YOUR PAST ORDERS ARE:</h1>
+
+<!-- {{orders[0].uOrders[0].orderId}} -->
+<div class="table table-bordered"  *ngFor="let j of orders" >
+  
+<tr>
+    <th>OrderId</th>
+    <div>
+        <th>product id</th>
+        <th>product Quantity</th>
+    </div>
+  
+    <th>Cart total</th>
+</tr>
+<tr *ngFor="let i of j.uOrders">
+   
+    <td >{{i.orderId}} </td>
+        <div *ngFor="let z of i.orderProd">
+           
+            <td  >{{z.pid}}</td>
+            <td colspan="2">{{z.pquantity}}</td>
+        </div>
+        
+    <td>Cart total: {{i.cartTotal}}</td>
+</tr>
+</div>
