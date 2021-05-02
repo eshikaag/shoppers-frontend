@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './orders/orders.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
 {path:'cart',component:CartComponent},
 
 {path:'orders',component:OrdersComponent},
+{path:'search',component:SearchComponent},
 ];
 
 @NgModule({

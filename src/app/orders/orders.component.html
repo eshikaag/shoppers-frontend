@@ -5,21 +5,21 @@
   
 <tr>
     <th>OrderId</th>
-    <div>
+    <span>
         <th>product id</th>
         <th>product Quantity</th>
-    </div>
+    </span>
   
     <th>Cart total</th>
 </tr>
 <tr *ngFor="let i of j.uOrders">
    
     <td >{{i.orderId}} </td>
-        <div *ngFor="let z of i.orderProd">
+        <span *ngFor="let z of i.orderProd">
            
-            <td  >{{z.pid}}</td>
-            <td colspan="2">{{z.pquantity}}</td>
-        </div>
+            <td>{{z.pid}}</td>
+            <td>{{z.pquantity}}</td>
+        </span>
         
     <td>Cart total: {{i.cartTotal}}</td>
 </tr>

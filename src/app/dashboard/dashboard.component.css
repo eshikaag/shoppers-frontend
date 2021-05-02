@@ -7,3 +7,22 @@
     font: small-caps;
     color: orange;
 }
+.nav-pills {
+    border-bottom: 1px solid #ddd;
+    border: 4px;
+}
+.nav-pills li a {
+    background: #1f4e79;
+    color: #fff;
+    display:inline-block;
+    line-height: 2em;
+    padding: 7px 15px;
+    border-radius: 0;
+    font-size: 20px;
+    float: left;
+
+}
+.secondheader
+{
+    background-color: black;
+}

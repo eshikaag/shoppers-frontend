@@ -15,6 +15,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CommonService } from './common.service';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { OrdersComponent } from './orders/orders.component';
     ProductsComponent,
     ProductDetailsComponent,
     CartComponent,
-    OrdersComponent
+    OrdersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

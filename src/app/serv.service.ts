@@ -61,4 +61,12 @@ getOrder(email):Observable<any>
 {
   return this.http.get(this.url+"getOrders/"+email)
 }
+
+searchprod(key):Observable<any>
+{
+  console.log("in searchc",this.url+"search/"+key)
+  return this.http.get(this.url+'search/'+key)
+}
+
+
 }

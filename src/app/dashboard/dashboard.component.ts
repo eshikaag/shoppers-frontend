@@ -11,7 +11,9 @@ import { ServService } from '../serv.service';
 export class DashboardComponent implements OnInit {
 slideShow:boolean;
 specificProdShow:boolean;
+searchKey:string='';
 products:any=[]
+searchShow=false
 categSelected:string
 errorMsg:string=null
 categories=['Clothes','Shoes','Furniture']
@@ -45,6 +47,27 @@ console.log(this.products)
   
   }
 }
+searchProducts(searchKey:string)
+{
+  this.serv.searchprod(searchKey).subscribe(data=>
+    {
+      this.products=[];
+this.products=data;
+this.searchShow=true;
+this.slideShow=false;
+  this.specificProdShow=false;
+console.log(this.products)
+    },
+    error=>
+    {
+      this.errorMsg=error.error.message;
+    }
+    )
+  // this.router.navigate(['/search/'+searchKey]);
+}
+
+
+
 
 
 
